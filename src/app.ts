@@ -7,7 +7,7 @@ import { router } from "./routes"
 
 const app: Application = express()
 
-const PORT: number = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000
 
 app.use(cors())
 app.set('json spaces', 4)
