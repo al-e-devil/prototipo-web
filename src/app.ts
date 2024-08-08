@@ -13,6 +13,6 @@ app.use(cors())
 app.set('json spaces', 4)
 app.use(express.json())
 app.use(router)
-app.use(express.static(path.join(__dirname, '../', 'public')));
+app.use(express.static(path.join(__dirname, './', 'public')));
 
 app.listen(PORT, () => console.log("Servidor en linea"))
