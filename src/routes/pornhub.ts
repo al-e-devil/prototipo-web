@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { download } from '../controllers/pornhub.dl'
+import { download } from '../controllers/pornhub.controller'
 
 const router = Router()
 
