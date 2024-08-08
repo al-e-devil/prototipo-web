@@ -5,7 +5,7 @@ import path from "path"
 
 import { router } from "./routes"
 
-const app = express()
+const app: Application = express()
 
 const PORT = process.env.PORT || 3000
 
@@ -15,4 +15,4 @@ app.use(express.json())
 app.use(router)
 app.use(express.static(path.join(__dirname, '../', 'public')));
 
-app.listen(PORT, () => console.log("Servidor en linea"))
+app.listen(PORT, (): void => console.log("Servidor en linea"))
