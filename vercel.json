@@ -4,10 +4,6 @@
     {
       "src": "build/app.js",
       "use": "@vercel/node"
-    },
-    {
-      "src": "public/**/*",
-      "use": "@vercel/static"
     }
   ]
 }
