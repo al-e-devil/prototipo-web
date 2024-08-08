@@ -1,7 +1,9 @@
-import { Request, Response } from 'express'
+import { Request, Response, Router } from 'express'
 
 const router = Router()
 
-app.get('/home', (req: Request, res: Response) => {
+router.get('/home', (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
+
+export { router}
