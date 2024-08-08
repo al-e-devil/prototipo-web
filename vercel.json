@@ -1,10 +1,9 @@
 {
   "version": 2,
+  "outputDirectory": "public",
   "builds": [
     {
-      "src": "src/app.ts",
-      "use": "@vercel/node",
-      "config": { "distDir": "dist" }
+      "use": "@vercel/node"
     },
     {
       "src": "public/**/*",
@@ -12,7 +11,13 @@
     }
   ],
   "routes": [
-    { "src": "/", "dest": "/home" },
-    { "src": "/home", "dest": "/index.html" }
+    {
+      "src": "/",
+      "dest": "/home"
+    },
+    {
+      "src": "/home",
+      "dest": "/index.html"
+    }
   ]
 }
