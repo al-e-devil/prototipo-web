@@ -12,12 +12,17 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/api/(.*)",
       "dest": "/dist/app.js"
     },
     {
-      "src": "/home(.*)",
+      "src": "/(.*)",
       "dest": "/public/$1"
+    },
+    {
+      "src": "/",
+      "headers": { "Location": "/home" },
+      "status": 301
     }
   ]
 }
