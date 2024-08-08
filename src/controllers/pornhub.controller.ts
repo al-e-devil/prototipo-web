@@ -50,7 +50,7 @@ export const download = async(req: Request, res:Response): Promise<Response> => 
         return res.status(200).json({
             status: 200,
             message: 'Process completed successfully',
-            result,
+            result: data,
         } as ResultData)
     } catch (e) {
         return res.status(500).json({
