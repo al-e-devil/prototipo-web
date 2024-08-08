@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "src/app.ts",
+      "src": "dist/app.js",
       "use": "@vercel/node"
     },
     {
@@ -12,21 +12,12 @@
   ],
   "routes": [
     {
-      "src": "/",
-      "dest": "/public/index.html"
-    },
-    {
-      "src": "/home",
-      "dest": "/public/home.html"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/public/$1"
+      "dest": "/dist/app.js"
     },
     {
-      "src": "/",
-      "headers": { "Location": "/home" },
-      "status": 301
+      "src": "/home(.*)",
+      "dest": "/public/$1"
     }
   ]
 }
