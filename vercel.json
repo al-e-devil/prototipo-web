@@ -1,23 +1,16 @@
 {
   "version": 2,
-  "outputDirectory": "public",
   "builds": [
     {
-      "use": "@vercel/node"
-    },
-    {
-      "src": "public/**/*",
-      "use": "@vercel/static"
+      "src": "src/app.ts",
+      "use": "@vercel/node",
+      "config": { "zeroConfig": true }
     }
   ],
   "routes": [
-    {
-      "src": "/",
-      "dest": "/home"
-    },
-    {
-      "src": "/home",
-      "dest": "/index.html"
+    { 
+      "src": "/(.*)", 
+      "dest": "dist/app.js"
     }
   ]
 }
