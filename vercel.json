@@ -4,21 +4,6 @@
     {
       "src": "dist/app.js",
       "use": "@vercel/node"
-    },
-    {
-      "src": "public/**/*",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/dist/app.js"
-    },
-    {
-      "src": "/",
-      "headers": { "Location": "/home" },
-      "status": 301
     }
   ]
 }
