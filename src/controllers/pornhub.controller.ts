@@ -53,6 +53,7 @@ export const download = async(req: Request, res:Response): Promise<Response> => 
             result: data,
         } as ResultData)
     } catch (e) {
+        console.log(e)
         return res.status(500).json({
             status: 500,
             message: 'An error occurred during the process',
