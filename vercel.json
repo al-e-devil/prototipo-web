@@ -1,12 +1,6 @@
 {
   "version": 2,
   "outputDirectory": ".",
-  "builds": [
-    {
-      "src": "build/app.js",
-      "use": "@vercel/node"
-    }
-  ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/build/app.js" },
     { "src": "/(.*)", "dest": "/build/app.js" }
