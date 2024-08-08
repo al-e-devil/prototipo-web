@@ -1,4 +1,4 @@
-import { Router } from "express"
+import express, { Request, Response, Router } from 'express';
 import { readdirSync } from "fs"
 import path from "path"
 
@@ -12,5 +12,9 @@ for (const file of files) {
         router.use(`/${name}`, module.router)
     }
 }
+
+router.get('/', (req: Request, res: Response) => {
+    res.redirect('/home');
+});
 
 export { router }
