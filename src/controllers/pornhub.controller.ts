@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as cheerio from 'cheerio';
-import express, { Request, Response } from 'express';
-import { Result, AxiosData, ResultData } from '../interfaces/pornhub.type'
+import { Request, Response } from 'express';
+import { Result, AxiosData, ResultData } from '../interfaces/pornhub.interface'
 
 const hub = async (url: string): Promise<Result[]> => {
     
@@ -50,7 +50,7 @@ export const download = async(req: Request, res:Response): Promise<Response> => 
         return res.status(200).json({
             status: 200,
             message: 'Process completed successfully',
-            result: data
+            result,
         } as ResultData)
     } catch (e) {
         return res.status(500).json({
