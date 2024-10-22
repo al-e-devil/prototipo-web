@@ -4,9 +4,10 @@
         "description": "",
         "main": "dist/app.js",
         "scripts": {
-          "build": "tsc",
-          "dev": "nodemon dist/app",
-          "start": "ts-node dist/app"
+          "start": "npx nodemon src/index.ts",
+          "dev": "npx nodemon src/index.ts",
+          "build:ui": "@powershell Remove-Item -Recurse -Force dist && cd ../frontend && npm run build && @powershell Copy-Item -Recurse dist ../backend",
+          "lint": "eslint ."
         },
         "keywords": [],
         "author": "",
