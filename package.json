@@ -1,12 +1,12 @@
 {
-    "name": "express-typescript-vercel-part2",
+    "name": "prototype-web",
     "version": "1.0.0",
     "description": "",
     "main": "dist/app.js",
     "scripts": {
         "test": "ts-node src/test.ts",
-        "start": "npx nodemon src/index.ts",
-        "dev": "npx nodemon src/index.ts",
+        "start": "npx nodemon src/app.ts",
+        "dev": "npx nodemon src/app.ts",
         "build": "ts-node src/app.ts"
     },
     "keywords": [],
