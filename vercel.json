@@ -16,10 +16,6 @@
         "dest": "/server.js"
       }
     ],
-    "includeFiles": [
-        "src/views/**/*",
-        "src/public/**/*"
-    ],
     "functions": {
       "server.js": {
         "memory": 3008,
