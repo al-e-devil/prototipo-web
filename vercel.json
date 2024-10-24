@@ -15,6 +15,12 @@
         "src": "/(.*)",
         "dest": "/server.js"
       }
+    ],
+    "static": {
+      "public": "public"
+    },
+    "includeFiles": [
+      "views/**/*.ejs"
     ]
   }
   
