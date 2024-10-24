@@ -8,6 +8,14 @@
       {
         "src": "src/**/*.js",
         "use": "@vercel/node"
+      },
+      {
+        "src": "public/**/*.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "views/**/*.js",
+        "use": "@vercel/node"
       }
     ],
     "routes": [
