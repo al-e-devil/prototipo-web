@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 404</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       .error-code {
+            display: flex;
+            gap: 10px; /* Espacio entre los dígitos */
+        }
+        /* Estilo específico para h1 */
+        .error-code h1 {
+            font-size: 5em;
+            margin: 0;
+            font-family: 'Source Code Pro', monospace; /* Fuente para el efecto de animación */
+        }
+        /* Estilo específico para p */
+        p {
+            font-size: 23px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="error-code">
+            <h1 id="digit1">4</h1>
+            <h1 id="digit2">0</h1>
+            <h1 id="digit3">4</h1>
+        </div>
+        <p id="error-message">Page Not Found</p>
+    </div>
+
+    <script>
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        const code = '404';
+        const times = [2000, 3000, 4000]; 
+        const elements = [
+            document.getElementById('digit1'),
+            document.getElementById('digit2'),
+            document.getElementById('digit3')
+        ];
+
+        const errorMessages = [
+            'Page Not Found',
+            'Not Here',
+            'Lost in Space',
+            'This Page Is Gone',
+            'Oops! 404',
+            'We Can\'t Find That Page'
+        ];
+
+        function getRandomCharacter() {
+            return characters[Math.floor(Math.random() * characters.length)];
+        }
+
+        function getRandomMessage() {
+            return errorMessages[Math.floor(Math.random() * errorMessages.length)];
+        }
+
+        function updateDigit(element, duration, fin) {
+            let elapsed = 0;
+            const speed = 30
+            const max = duration;
+            const interval = setInterval(() => {
+                element.textContent = getRandomCharacter();
+                elapsed += speed;
+                if (elapsed >= max) {
+                    clearInterval(interval);
+                    element.textContent = fin;
+                }
+            }, speed);
+        }
+
+        function animación() {
+            elements.forEach((element, index) => {
+                updateDigit(element, times[index], code[index]);
+            });
+
+            const p = document.getElementById('error-message');
+            p.textContent = getRandomMessage();
+        }
+
+        window.onload = animación
+    </script>
+</body>
+</html>
