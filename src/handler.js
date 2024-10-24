@@ -23,8 +23,8 @@ const createRouter = async () => {
                 error: route.error,
                 premium: route.premium
             })
-            // error
             
+            // error
             const error = (route.error ? (req, res, next) => {
                 res.json({
                     creator: global.creator,
