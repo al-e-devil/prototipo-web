@@ -1,5 +1,5 @@
 {
     "ext": "js,json,ejs",
     "ignore": ["public/*", "node_modules"],
-    "exec": "node --experimental-modules app.js"
+    "exec": "node --experimental-modules server.js"
   }
