@@ -16,7 +16,7 @@
         },
         {
             "src": "views/**",
-            "use": "@vercel/static"
+            "use": "@vercel/node"
         }
     ],
     "routes": [
