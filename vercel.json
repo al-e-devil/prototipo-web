@@ -8,14 +8,6 @@
       {
         "src": "src/**/*.js",
         "use": "@vercel/node"
-      },
-      {
-        "src": "public/**/*.js",
-        "use": "@vercel/node"
-      },
-      {
-        "src": "views/**/*.js",
-        "use": "@vercel/node"
       }
     ],
     "routes": [
@@ -23,6 +15,12 @@
         "src": "/(.*)",
         "dest": "/server.js"
       }
-    ]
+    ],
+    "functions": {
+      "server.js": {
+        "memory": 3008,
+        "maxDuration": 10
+      }
+    }
   }
   
