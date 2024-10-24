@@ -27,7 +27,7 @@ const run = async () => {
             parameterLimit: 50000
         }))
         .use(express.static(path.join(__dirname, 'public')))
-        .use('/', await require('./handler'))
+        .use('/', await require('./handler.js'))
         .get('*', (req, res) => res.status(404).render("404"))
     app.disable('x-powered-by')
     app.use((req, res, next) => {
