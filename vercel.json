@@ -15,8 +15,8 @@
           "use": "@vercel/static"
         },
         {
-            "src": "views/**",
-            "use": "@vercel/node"
+            "src": "views/**/*.ejs",
+            "use": "@vercel/static"
         }
     ],
     "routes": [
