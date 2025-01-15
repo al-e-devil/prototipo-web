@@ -3,7 +3,7 @@ exports.routes = {
    path: '/api',
    method: 'get',
    execution: async (req, res) => {
-      res.json({ json: "api is running", owner: "alexito" })
+      res.json({ json: "api is online", owner: "alexito" })
    },
    error: false
 }
