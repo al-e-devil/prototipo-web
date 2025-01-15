@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #welcome {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        #created-by {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="welcome"></div>
+    </div>
+
+    <script>
+        const text = "sesion iniciada"
+        let index = 0
+        const welcome = document.getElementById('welcome')
+
+        function type() {
+            if (index < text.length) {
+                welcome.innerHTML += text.charAt(index)
+                index++
+                setTimeout(type, 100)
+            }
+        }
+
+        type()
+    </script>
+</body>
+</html>

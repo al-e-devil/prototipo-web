@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error 404</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-       .error-code {
+        .error-code {
             display: flex;
-            gap: 10px; /* Espacio entre los dígitos */
+            gap: 10px;
+            /* Espacio entre los dígitos */
         }
+
         /* Estilo específico para h1 */
         .error-code h1 {
             font-size: 5em;
             margin: 0;
-            font-family: 'Source Code Pro', monospace; /* Fuente para el efecto de animación */
+            font-family: 'Source Code Pro', monospace;
+            /* Fuente para el efecto de animación */
         }
+
         /* Estilo específico para p */
         p {
             font-size: 23px;
@@ -23,6 +28,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="error-code">
@@ -36,7 +42,7 @@
     <script>
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
         const code = '404';
-        const times = [2000, 3000, 4000]; 
+        const times = [2000, 3000, 4000];
         const elements = [
             document.getElementById('digit1'),
             document.getElementById('digit2'),
@@ -86,4 +92,5 @@
         window.onload = animación
     </script>
 </body>
+
 </html>

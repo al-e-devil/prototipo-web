@@ -8,7 +8,7 @@ const createRouter = async () => {
     try {
         await Loader.router(path.join(__dirname, 'routers'))
         const routers = Object.values(Object.fromEntries(Object.entries(Loader.plugins)))
-        routers.some(v => {
+        routers.forEach(v => {
             const route = v.routes
             if (route.name) collection.push({
                 category: Func.ucword(route.category),
@@ -22,7 +22,6 @@ const createRouter = async () => {
                 },
                 error: route.error,
                 premium: route.premium
-            
             })
 
             // error
@@ -35,28 +34,29 @@ const createRouter = async () => {
             } : (req, res, next) => {
                 next()
             })
-            
-            // vaidator & requires
+
+            // validator & requires
             const requires = (!route.requires ? (req, res, next) => {
                 const reqFn = route.method === 'get' ? 'reqGet' : 'reqPost'
                 const check = global.status[reqFn](req, route.parameter)
                 if (!check.status) return res.json(check)
-                    const reqType = route.method === 'get' ? 'query': 'body'
+                const reqType = route.method === 'get' ? 'query' : 'body'
                 if ('url' in req[reqType]) {
                     const isUrl = global.status.url(req[reqType].url)
                     if (!isUrl.status)
                         return res.json(isUrl)
-                        next()
+                    next()
                 } else next()
-            }: route.requires)
-                
+            } : route.requires)
+
             // custom validator
-            const validator = (route.validator ? route.validator: (req, res, next) => {
+            const validator = (route.validator ? route.validator : (req, res, next) => {
                 next()
             })
-                
-            router[route.method](route.path, error, requires, validator, route.execution)
-            if (router.stack.length === routers.length || (router.stack.length - 1) === routers.length) return
+
+            if (typeof router[route.method] === 'function') {
+                router[route.method.toLowerCase()](route.path, error, requires, validator, route.execution)
+            }
         })
         return router
     } catch (e) {
