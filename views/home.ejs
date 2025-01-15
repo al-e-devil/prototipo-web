@@ -6,34 +6,17 @@
     <title>Inicio</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        #welcome {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        #created-by {
-            font-size: 18px;
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div id="welcome"></div>
-    </div>
-
+    <section class="hero is-fullheight">
+        <div class="container is-max-tablet">
+            <div class="notification is-primary">
+               
+            </div>
+        </div>
+    </section>
     <script>
-        const text = "sesion iniciada"
-        let index = 0
-        const welcome = document.getElementById('welcome')
-
-        function type() {
-            if (index < text.length) {
-                welcome.innerHTML += text.charAt(index)
-                index++
-                setTimeout(type, 100)
-            }
-        }
-
-        type()
     </script>
 </body>
 </html>

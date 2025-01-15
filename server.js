@@ -8,7 +8,7 @@ const ip = require('request-ip')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const session = require('express-session')
-const crypto = require('crypto')
+const MongoStore = require('connect-mongo')
 
 const PORT = process.env.PORT || 8080
 
@@ -38,7 +38,11 @@ const run = async () => {
             secret: crypto.randomBytes(64).toString('hex'),
             resave: false,
             saveUninitialized: true,
-            cookie: { secure: false }
+            store: MongoStore.create({
+                mongoUrl: `mongodb+srv://${process.env.MongoDbUser}:${process.env.MongoDbPassword}@serverdatadb.39fv13g.mongodb.net/nazi?retryWrites=true&w=majority&appName=ServerDataDB`,
+                collectionName: 'sessions'
+            }),
+            cookie: { secure: true }
         }))
         .use('/', await require('./src/handler.js'))
         .use((req, res, next) => {
