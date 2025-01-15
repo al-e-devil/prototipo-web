@@ -11,7 +11,7 @@ exports.routes = {
             req.session.user = user;
             res.status(200).send('Inicio de sesión exitoso');
         } else {
-            res.status(401).send('Credenciales incorrectas');
+            res.status(401).send('Incorrect credentials');
         }
     },
     error: false
