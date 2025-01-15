@@ -1,5 +1,3 @@
-const Login = require('../models/login');
-
 exports.routes = {
    category: 'main',
    path: '/login',
