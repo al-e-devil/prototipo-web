@@ -38,7 +38,7 @@ const run = async () => {
             secret: crypto.randomBytes(64).toString('hex'),
             resave: false,
             saveUninitialized: true,
-            cookie: { secure: false } // Cambiar a true si se usa HTTPS
+            cookie: { secure: false }
         }))
         .use('/', await require('./src/handler.js'))
         .use((req, res, next) => {

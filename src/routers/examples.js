@@ -1,9 +1,9 @@
 exports.routes = {
    category: 'main',
-   path: '/song',
+   path: '/api',
    method: 'get',
    execution: async (req, res) => {
-      res.json({ json: "a" })
+      res.json({ json: "api is running" })
    },
    error: false
 }
