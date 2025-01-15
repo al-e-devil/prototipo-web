@@ -9,6 +9,7 @@ const morgan = require('morgan')
 const mongoose = require('mongoose')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')
+const crypto = require('crypto')
 
 const PORT = process.env.PORT || 8080
 
