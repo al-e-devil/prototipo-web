@@ -43,7 +43,7 @@ const run = async () => {
                 mongoUrl: `mongodb+srv://${process.env.MongoDbUser}:${process.env.MongoDbPassword}@serverdatadb.39fv13g.mongodb.net/nazi?retryWrites=true&w=majority&appName=ServerDataDB`,
                 collectionName: 'sessions'
             }),
-            cookie: { secure: true }
+            cookie: { secure: true, maxAge: 7 * 24 * 60 * 60 * 1000 } // 7 days
         }))
         .use('/', await require('./src/handler.js'))
         .use((req, res, next) => {
