@@ -14,6 +14,7 @@ const run = async () => {
     morgan.token('clientIp', (req) => req.clientIp)
     app.set('json spaces', 3)
         .set('view engine', 'ejs')
+        .set('views', path.join(__dirname, 'views'))
         .engine('ejs', require('ejs').__express)
         .use(express.json())
         .use(ip.mw())
@@ -28,7 +29,9 @@ const run = async () => {
         }))
         .use(express.static(path.join(__dirname, 'public')))
         .use('/', await require('./src/handler.js'))
-        .get('*', (req, res) => res.status(404).render("404"))
+        .use((req, res, next) => {
+            res.status(404).render("404")
+        })
     app.disable('x-powered-by')
     app.use((req, res, next) => {
         res.setHeader('X-Powered-By', 'NXR-SERVER')
