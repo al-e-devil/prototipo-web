@@ -54,7 +54,7 @@ const createRouter = async () => {
                 next()
             })
 
-            if (typeof router[route.method.toLowerCase()] === 'function') {
+            if (typeof router[route.method] === 'function') {
                 router[route.method.toLowerCase()](route.path, error, requires, validator, route.execution)
             }
         })
