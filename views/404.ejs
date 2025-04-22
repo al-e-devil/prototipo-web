@@ -10,18 +10,14 @@
         .error-code {
             display: flex;
             gap: 10px;
-            /* Espacio entre los dígitos */
         }
 
-        /* Estilo específico para h1 */
         .error-code h1 {
             font-size: 5em;
             margin: 0;
             font-family: 'Source Code Pro', monospace;
-            /* Fuente para el efecto de animación */
         }
 
-        /* Estilo específico para p */
         p {
             font-size: 23px;
             margin: 0;
@@ -80,7 +76,7 @@
             }, speed);
         }
 
-        function animación() {
+        function animacion() {
             elements.forEach((element, index) => {
                 updateDigit(element, times[index], code[index]);
             });
@@ -89,7 +85,7 @@
             p.textContent = getRandomMessage();
         }
 
-        window.onload = animación
+        window.onload = animacion
     </script>
 </body>
 
